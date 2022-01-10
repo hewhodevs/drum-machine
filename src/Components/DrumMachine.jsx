@@ -22,7 +22,7 @@ class DrumMachine extends React.Component {
         <h1>Drum Machine</h1>
         <div id="display">
           <button id="heater 1" className="drum-pad">
-            Q{" "}
+            Q
             <audio
               className="clip"
               id="Q"
