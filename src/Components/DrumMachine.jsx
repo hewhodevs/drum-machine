@@ -20,6 +20,9 @@ class DrumMachine extends React.Component {
     return (
       <div className="Drum-Machine">
         <h1>Drum Machine</h1>
+        <div id="display">
+          
+        </div>
       </div>
     );
   }
