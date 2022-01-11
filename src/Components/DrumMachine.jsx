@@ -1,6 +1,54 @@
 import React from "react";
 import DrumPad from './DrumPad';
 
+const soundKitOne = [
+  {
+    id: "Heater-1",
+    trigger: "Q",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
+  },
+  {
+    id: "Heater-2",
+    trigger: "W",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
+  },
+  {
+    id: "Heater-3",
+    trigger: "E",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
+  },
+  {
+    id: "Heater-4",
+    trigger: "A",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"
+  },
+  {
+    id: "Clap",
+    trigger: "S",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"
+  },
+  {
+    id: "Open-HH",
+    trigger: "D",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"
+  },
+  {
+    id: "Kick-n'-Hat",
+    trigger: "Z",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"
+  },
+  {
+    id: "Kick",
+    trigger: "X",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"
+  },
+  {
+    id: "Closed-HH",
+    trigger: "C",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
+  },
+];
+
 class DrumMachine extends React.Component {
   constructor(props) {
     super(props);
@@ -18,19 +66,15 @@ class DrumMachine extends React.Component {
   }
 
   render() {
+    const drumPadOne = soundKitOne.map(sound => {
+      return <DrumPad id={sound.id} trigger={sound.trigger} url={sound.url} />
+    });
+
     return (
       <div className="Drum-Machine">
         <h1>Drum Machine</h1>
         <div id="display">
-          <DrumPad trackTitle="heater-1" text="Q" url="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3" />
-          <DrumPad trackTitle="heater-2" text="W" url="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" />
-          <DrumPad trackTitle="heater-3" text="E" url="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3" />
-          <DrumPad trackTitle="heater-4" text="A" url="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3" />
-          <DrumPad trackTitle="clap" text="S" url="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3" />
-          <DrumPad trackTitle="Open HH" text="D" url="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3" />
-          <DrumPad trackTitle="kick n hat" text="Z" url="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3" />
-          <DrumPad trackTitle="kick" text="X" url="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3" />
-          <DrumPad trackTitle="clip" text="C" url="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3" />
+          {drumPadOne}
         </div>
       </div>
     );

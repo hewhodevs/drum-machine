@@ -7,11 +7,11 @@
 
 function DrumPad(props) {
   return (
-    <button id={props.trackTitle} className="drum-pad">
-      {props.text}
+    <button id={props.id} className="drum-pad">
+      {props.trigger}
       <audio
         className="clip"
-        id={props.text}
+        id={props.trigger}
         src={props.url}
       ></audio>
     </button>
