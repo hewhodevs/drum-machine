@@ -5,17 +5,30 @@
 * url - path to the sound track
 */
 
-function DrumPad(props) {
-  return (
-    <button id={props.id} className="drum-pad">
-      {props.trigger}
-      <audio
-        className="clip"
-        id={props.trigger}
-        src={props.url}
-      ></audio>
-    </button>
-  );
+import React from "react";
+
+class DrumPad extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    // bind methods here
+  }
+
+  render() {
+    const props = this.props;
+    const trigger = props.trigger;
+
+    return (
+      <button id={props.id} className="drum-pad">
+        {trigger}
+        <audio
+          className="clip"
+          id={trigger}
+          src={props.url}
+        ></audio>
+      </button>
+    );
+  }
 }
 
 export default DrumPad;
