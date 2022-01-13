@@ -7,4 +7,3 @@
  * State:
  * @enabled - Boolean, true if enabled, false if not.
  */
-
