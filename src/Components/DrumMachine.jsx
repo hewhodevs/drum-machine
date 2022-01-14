@@ -52,8 +52,11 @@ const soundKitOne = [
 class DrumMachine extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      soundPlayed: "test"
+    };
     // bind any class methods here
+    this.setSoundPlayed = this.setSoundPlayed.bind(this);
   }
 
   componentDidMount() {
@@ -65,15 +68,28 @@ class DrumMachine extends React.Component {
     document.body.appendChild(script);
   }
 
+  setSoundPlayed(str) {
+    this.setState(prevState => ({
+      soundPlayed: str
+    }));
+  }
+
   render() {
     const drumPadOne = soundKitOne.map(sound => {
-      return <DrumPad key={sound.id} id={sound.id} keyTrigger={sound.keyTrigger} url={sound.url} />
+      return <DrumPad 
+                key={sound.id} 
+                id={sound.id} 
+                keyTrigger={sound.keyTrigger} 
+                url={sound.url} 
+                setSoundPlayed={this.setSoundPlayed}
+              />
     });
 
     return (
       <div className="Drum-Machine">
         <h1>Drum Machine</h1>
         <div id="display">
+          <h2>{this.state.soundPlayed}</h2>
           {drumPadOne}
         </div>
       </div>

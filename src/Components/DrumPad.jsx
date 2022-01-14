@@ -32,7 +32,8 @@ class DrumPad extends React.Component {
     const sound = document.getElementById(this.props.keyTrigger);
     // Play the audio element
     sound.play();
-    // setTimeout to stop playing the sound after 1 second.
+    // lift up state to display sound played in main DrumMachine component
+    this.props.setSoundPlayed(this.props.id);
   }
 
   render() {
