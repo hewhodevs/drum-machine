@@ -75,15 +75,15 @@ class DrumMachine extends React.Component {
   }
 
   render() {
-    const drumPadOne = soundKitOne.map(sound => {
-      return <DrumPad 
-                key={sound.id} 
-                id={sound.id} 
-                keyTrigger={sound.keyTrigger} 
-                url={sound.url} 
-                setSoundPlayed={this.setSoundPlayed}
-              />
-    });
+    const drumPadOne = soundKitOne.map(sound => 
+      <DrumPad 
+        key={sound.id} 
+        id={sound.id} 
+        keyTrigger={sound.keyTrigger} 
+        url={sound.url} 
+        setSoundPlayed={this.setSoundPlayed}
+      />
+    );
 
     return (
       <div className="Drum-Machine">
