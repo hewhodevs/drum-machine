@@ -59,15 +59,6 @@ class DrumMachine extends React.Component {
     this.setSoundPlayed = this.setSoundPlayed.bind(this);
   }
 
-  componentDidMount() {
-    // Append FreeCodeCamp tests to the DOM to see the test suite
-    const script = document.createElement("script");
-    script.src =
-      "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }
-
   setSoundPlayed(str) {
     this.setState(prevState => ({
       soundPlayed: str
